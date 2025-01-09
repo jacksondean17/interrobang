@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Interrobang Symbol</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Minimal inline styling for demonstration -->
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #fafafa;
+      color: #333;
+    }
+    header, main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fefefe;
+      border-bottom: 1px solid #ddd;
+    }
+    h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    main {
+      padding-top: 2rem;
+    }
+    .symbol-box {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 1rem;
+      display: inline-block;
+      text-align: center;
+      margin-right: 1rem;
+    }
+    .symbol-box span {
+      font-size: 3rem;
+      display: block;
+    }
+    .copy-button {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.25rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .copy-button:hover {
+      background: #005dc1;
+    }
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Interrobang (‽) Copy Page</h1>
+  </header>
+
+  <main>
+    <p>
+      The <strong>interrobang</strong> is a punctuation mark that combines
+      the question mark (?) and the exclamation point (!). It can be useful
+      for conveying excitement or disbelief in a single glyph.
+    </p>
+
+    <!-- Symbol Display and Copy Button -->
+    <div class="symbol-box">
+      <span id="interrobangSymbol">&#x203D;</span>
+      U+203D
+    </div>
+    <button class="copy-button" onclick="copySymbol()">Copy</button>
+
+    <p style="margin-top: 2rem;">
+      After copying, you can paste the interrobang in your text editor, email,
+      chat, or anywhere else you like.
+    </p>
+  </main>
+
+  <footer>
+    &copy; 2025 YourNameHere
+  </footer>
+
+  <!-- Minimal JavaScript to copy the symbol to the clipboard -->
+  <script>
+    function copySymbol() {
+      const symbol = document.getElementById('interrobangSymbol').textContent;
+      
+      // Create a temporary textarea to execute the "copy"
+      const tempInput = document.createElement('textarea');
+      tempInput.value = symbol;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+
+      // Provide basic feedback (optional)
+      alert(`Copied the interrobang symbol: ${symbol}`);
+    }
+  </script>
+</body>
+</html>
