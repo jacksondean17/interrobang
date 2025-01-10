@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1G0NBBZHRV"></script>
   <script>
@@ -12,23 +13,32 @@
     gtag('config', 'G-1G0NBBZHRV');
   </script>
 
-  <title>Interrobang‽</title>
+  <title>Interrobang (‽) – Question Exclamation Mark Combo</title>
 
   <!-- Responsive Viewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Basic SEO Meta Tags -->
-  <meta name="description" content="A minimal page to copy the interrobang symbol (‽) to your clipboard with one click. Perfect for adding flair to your writing!" />
-  <meta name="keywords" content="interrobang, punctuation, symbol, copy, copy button, special characters" />
+  <meta
+    name="description"
+    content="Copy the interrobang (‽) – a punctuation mark that combines the question mark and exclamation point. Perfect for expressing surprise and inquiry in one symbol!"
+  />
+  <meta
+    name="keywords"
+    content="interrobang, question exclamation mark combo, punctuation, symbol, copy, special characters, exclamation question punctuation, question exclamation combination, U+203D"
+  />
   
   <!-- Open Graph / Social Media Preview Tags -->
-  <meta property="og:title" content="Copy the Interrobang Symbol (‽)" />
-  <meta property="og:description" content="Click to copy the interrobang symbol. Spice up your questions and exclamations with a single glyph!" />
-  <!-- Example image URL (optional): update to your own image location for sharing -->
+  <meta property="og:title" content="Copy the Interrobang Symbol (‽) – Question Exclamation Mark Combo" />
+  <meta
+    property="og:description"
+    content="A minimal page to copy the interrobang symbol. Spice up your questions and exclamations with a single glyph!"
+  />
   <meta property="og:image" content="https://jacksondean.space/interrobang/images/social.png" />
   <meta property="og:url" content="https://jacksondean.space/interrobang" />
   <meta property="og:type" content="website" />
 
+  <!-- Favicon -->
   <link rel="icon" href="images/favicon.png" type="image/png" />
 
   <style>
@@ -78,6 +88,7 @@
       border-radius: 4px;
       cursor: pointer;
       font-size: 1rem;
+      transition: background 0.2s;
     }
     .copy-button:hover {
       background: #005dc1;
@@ -88,13 +99,25 @@
       font-size: 0.85rem;
       color: #666;
     }
+
+    /* Optional: small style to show a quick check mark or color change */
+    .copy-button.copied {
+      background: #28a745; /* green background */
+    }
   </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58WMSDPS"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-58WMSDPS"
+      height="0"
+      width="0"
+      style="display:none;visibility:hidden"
+    ></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <header>
     <h1>Interrobang (‽) Copy Page</h1>
@@ -103,8 +126,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <main>
     <p>
       The <strong>interrobang</strong> is a punctuation mark that combines
-      the question mark (?) and the exclamation point (!). It can be useful
-      for conveying excitement or disbelief in a single glyph.
+      the question mark (?) and the exclamation point (!). If you’re looking
+      for a <em>question exclamation mark combo</em> or
+      <em>exclamation question punctuation</em>, you’ve come to the right
+      place! The interrobang (‽) conveys excitement and inquiry in a
+      single glyph.
     </p>
 
     <!-- Symbol Display and Copy Button -->
@@ -112,12 +138,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span id="interrobangSymbol">&#x203D;</span>
       U+203D
     </div>
-    <button class="copy-button" onclick="copySymbol()">Copy</button>
+    <button class="copy-button" id="copyBtn" onclick="copySymbol()">Copy</button>
 
     <p style="margin-top: 2rem;">
       After copying, you can paste the interrobang in your text editor, email,
       chat, or anywhere else you like.
     </p>
+
+    <!-- Optional FAQ or extra context for SEO -->
+    <section style="margin-top: 2rem;">
+      <h2>What is this “question exclamation mark combo” symbol?</h2>
+      <p>
+        It’s called an <strong>interrobang</strong> (‽). Whether you call it a
+        question-exclamation mark, an exclamation-question mark, or 
+        something else, it's a single punctuation mark that merges both
+        the question mark and exclamation point.
+      </p>
+      <h3>How do I type it?</h3>
+      <p>
+        Most keyboards don’t have a direct key for it. That’s why this site
+        provides a quick copy button—just click “Copy,” then paste wherever
+        you’d like.
+      </p>
+    </section>
+
   </main>
 
   <footer>
@@ -128,8 +172,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <script>
     function copySymbol() {
       const symbol = document.getElementById('interrobangSymbol').textContent;
-      
-      // Create a temporary textarea to execute the "copy"
+      const copyButton = document.getElementById('copyBtn');
+
+      // Copy to clipboard
       const tempInput = document.createElement('textarea');
       tempInput.value = symbol;
       document.body.appendChild(tempInput);
@@ -137,8 +182,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       document.execCommand('copy');
       document.body.removeChild(tempInput);
 
-      // Provide basic feedback (optional)
-      alert(`Copied the interrobang symbol: ${symbol}`);
+      // Change button text/appearance
+      copyButton.textContent = "Copied! ✓";
+      copyButton.classList.add('copied');
     }
   </script>
 </body>
